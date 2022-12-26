@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+        
+
+        <link rel="shortcut icon" href="{{asset("assets/images/favicon.ico")}}">
+
+        <!-- C3 charts css -->
+        <link href="{{asset("../plugins/c3/c3.min.css")}}" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="{{asset("assets/css/bootstrap.min.css")}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset("assets/css/icons.css")}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset("assets/css/style.css")}}" rel="stylesheet" type="text/css" />
+        {% endblock %}
+    
+        {% block javascripts %}
+        <script src="{{asset("assets/js/jquery.min.js")}}"></script>
+        <script src="{{asset("assets/js/bootstrap.bundle.min.js")}}"></script>
+        <script src="{{asset("assets/js/modernizr.min.js")}}"></script>
+        <script src="{{asset("assets/js/waves.js")}}"></script>
+        <script src="{{asset("assets/js/jquery.slimscroll.js")}}"></script>
+        <script src="{{asset("assets/js/jquery.nicescroll.js")}}"></script>
+        <script src="{{asset("assets/js/jquery.scrollTo.min.js")}}"></script>
+
+        <!-- Peity chart JS -->
+        <script src="{{asset("../plugins/peity-chart/jquery.peity.min.js")}}"></script>
+
+        <!--C3 Chart-->
+        <script src="{{asset("../plugins/d3/d3.min.js")}}"></script>
+        <script src="{{asset("../plugins/c3/c3.min.js")}}"></script>
+
+        <!-- KNOB JS -->
+        <script src="{{asset("../plugins/jquery-knob/excanvas.js")}}"></script>
+        <script src="{{asset("../plugins/jquery-knob/jquery.knob.js")}}"></script>
+
+        <!-- Page specific js -->
+        <script src="{{asset("assets/pages/dashboard.js")}}"></script>
+
+        <!-- App js -->
+        <script src="{{asset("assets/js/app.js")}}"></script>
+
+        {% endblock %}
+    
+    </head>
+    <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
+    <body>
+    <header id="topnav">
+       
+            <!-- MENU Start -->
+            <div class="navbar-custom">
+                <div class="container-fluid">
+                    <div id="navigation">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu" align="center">
+    
+                            <li class="has-submenu">
+                                <a href="{{path('app_index')}}"><i class="mdi mdi-home"></i>Acceuil</a>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="mdi mdi-account"></i>Mon compte</a>
+                                <ul class="submenu megamenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="{{path('app_login')}}">Se connecter</a></li>
+                                            <li><a href="{{path('app_register')}}">S'inscrire</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="{{path('about')}}"><i class="mdi mdi-buffer"></i>A propos</a>
+                            </li>
+                        </ul>
+                        <!-- End navigation menu -->
+                    </div> <!-- end #navigation -->
+                </div> <!-- end container -->
+            </div> <!-- end navbar-custom -->
+        </header>
+        {% block body %}
+        
+        {% endblock %}
+    </body>
+    <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12" align ="center">
+                        2021 - 2022 © Dev Alliance Developpé par sevYOnDaTracks
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+</html>
+ 
